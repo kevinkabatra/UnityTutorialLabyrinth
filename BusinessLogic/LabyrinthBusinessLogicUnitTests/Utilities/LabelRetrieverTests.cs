@@ -13,8 +13,7 @@
         /// </summary>
         public void Dispose()
         {
-            var retriever = LabelRetriever.GetLabelRetriever();
-            retriever.Reset();
+            LabelRetriever.Reset();
         }
 
         [Fact]
@@ -28,7 +27,7 @@
         [Fact]
         public void CanRetrieveDefaultApplicationStartLabel()
         {
-            var english = Cultures.EnglishUnitedStates;
+            var english = Languages.EnglishUnitedStates;
             var retriever = LabelRetriever.GetLabelRetriever(english);
 
             const string expectedLabelContent = "Application started.";
@@ -42,7 +41,7 @@
         [SuppressMessage("ReSharper", "StringLiteralTypo", Justification = "Content written in Spanish.")]
         public void CanRetrieveTranslatedApplicationStartLabel()
         {
-            var spanish = Cultures.SpanishSpain;
+            var spanish = Languages.SpanishSpain;
             var retriever = LabelRetriever.GetLabelRetriever(spanish);
 
             const string expectedLabelContent = "Programa iniciado.";

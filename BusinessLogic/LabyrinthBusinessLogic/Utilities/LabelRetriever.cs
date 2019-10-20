@@ -9,14 +9,23 @@
     ///     Supports getting labels from a language specific resource file.
     /// </summary>
     /// <remarks>Singleton class.</remarks>
-    public class LabelRetriever : ILabelRetriever
+    public class LabelRetriever
     {
         private static LabelRetriever _retriever;
         private static readonly object ThreadSafeLock = new object();
 
+        #region Application labels
         public string ApplicationStart => Labels.ApplicationStart;
-        public string GameStart =>  Labels.GameStart;
+        public string GameStart => Labels.GameStart;
         public string GameOver => Labels.GameOver;
+        #endregion
+
+        #region  Movement labels
+        public string PlayerMovingForward => Labels.PlayerMovingForward;
+        public string PlayerMovingBackward => Labels.PlayerMovingBackward;
+        public string PlayerMovingLeft => Labels.PlayerMovingLeft;
+        public string PlayerMovingRight => Labels.PlayerMovingRight;
+        #endregion
 
         /// <summary>
         ///     Returns a singleton instance of <c>LabelRetriever</c>.
@@ -24,7 +33,7 @@
         /// <param name="language"></param>
         /// <returns><c>LabelRetriever</c></returns>
         /// <seealso href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/lock-statement"/>
-        public static LabelRetriever GetLabelRetriever(Cultures language = null)
+        public static LabelRetriever GetLabelRetriever(Languages language = null)
         {
             if (_retriever == null)
             {
@@ -45,7 +54,7 @@
         /// <summary>
         ///     Resets the singleton, this is required for unit testing.
         /// </summary>
-        public void Reset()
+        public static void Reset()
         {
             lock (ThreadSafeLock)
             {
@@ -58,9 +67,9 @@
         /// </summary>
         /// <param name="language">The language that will be used for translation purposes.</param>
         /// <remarks>If language is left null, will default to English United States.</remarks>
-        private LabelRetriever(Cultures language)
+        private LabelRetriever(Languages language)
         {
-            var languageValue = (language ?? Cultures.EnglishUnitedStates).Value;
+            var languageValue = (language ?? Languages.EnglishUnitedStates).Value;
             var cultureInfo = CultureInfo.CreateSpecificCulture(languageValue);
             SetCultureTo(cultureInfo);
         }

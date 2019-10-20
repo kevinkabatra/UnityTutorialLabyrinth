@@ -79,11 +79,47 @@ namespace LabyrinthBusinessLogic.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User has started playing..
+        ///   Looks up a localized string similar to Player has started the game..
         /// </summary>
         public static string GameStart {
             get {
                 return ResourceManager.GetString("GameStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player is moving backward..
+        /// </summary>
+        public static string PlayerMovingBackward {
+            get {
+                return ResourceManager.GetString("PlayerMovingBackward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player is moving forward..
+        /// </summary>
+        public static string PlayerMovingForward {
+            get {
+                return ResourceManager.GetString("PlayerMovingForward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player is moving left..
+        /// </summary>
+        public static string PlayerMovingLeft {
+            get {
+                return ResourceManager.GetString("PlayerMovingLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player is moving right..
+        /// </summary>
+        public static string PlayerMovingRight {
+            get {
+                return ResourceManager.GetString("PlayerMovingRight", resourceCulture);
             }
         }
     }

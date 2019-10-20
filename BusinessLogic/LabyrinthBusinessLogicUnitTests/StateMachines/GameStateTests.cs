@@ -7,6 +7,7 @@
     using Moq;
     using Stateless;
     using Xunit;
+    using GameState = LabyrinthBusinessLogic.StateMachines.States.GameState;
 
     public class GameStateTests
     {
@@ -22,21 +23,9 @@
         public void CanCreateStateMachine()
         {
             var displayHandler = _mockDisplayHandler.Object;
-            const GameStates gameState = GameStates.None;
+            const GameState gameState = GameState.None;
             
-            var stateMachine = new GameState(gameState, displayHandler);
-
-            Assert.NotNull(stateMachine);
-        }
-
-        [Fact]
-        public void CanCreateStateMachineWithSpecifiedFiringMode()
-        {
-            var displayHandler = _mockDisplayHandler.Object;
-            const GameStates gameState = GameStates.None;
-            const FiringMode queuedFiringMode = FiringMode.Queued;
-            
-            var stateMachine = new GameState(gameState, queuedFiringMode, displayHandler);
+            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameState(gameState, displayHandler);
 
             Assert.NotNull(stateMachine);
         }
@@ -45,12 +34,12 @@
         public void CanTransitionStateMachineFromNoneToPlaying()
         {
             var displayHandler = _mockDisplayHandler.Object;
-            const GameStates gameState = GameStates.None;
+            const GameState gameState = GameState.None;
             
-            var stateMachine = new GameState(gameState, displayHandler);
-            stateMachine.Fire(GameStateTriggers.StartGame);
+            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameState(gameState, displayHandler);
+            stateMachine.Fire(GameStateTrigger.StartGame);
 
-            const GameStates expectedState = GameStates.Playing;
+            const GameState expectedState = GameState.Playing;
             var actualState = stateMachine.State;
 
             Assert.Equal(expectedState, actualState);
@@ -61,12 +50,12 @@
         public void CanTransitionStateMachineFromPayingToGameOver()
         {
             var displayHandler = _mockDisplayHandler.Object;
-            const GameStates gameState = GameStates.Playing;
+            const GameState gameState = GameState.Playing;
 
-            var stateMachine = new GameState(gameState, displayHandler);
-            stateMachine.Fire(GameStateTriggers.StopGame);
+            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameState(gameState, displayHandler);
+            stateMachine.Fire(GameStateTrigger.StopGame);
 
-            const GameStates expectedState = GameStates.GameOver;
+            const GameState expectedState = GameState.GameOver;
             var actualState = stateMachine.State;
 
             Assert.Equal(expectedState, actualState);

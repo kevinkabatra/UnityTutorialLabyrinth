@@ -124,6 +124,22 @@
     <value>Thanks for playing, I hope that you enjoyed this game. - Kevin Kabatra 2019</value>
   </data>
   <data name="GameStart" xml:space="preserve">
-    <value>User has started playing.</value>
+    <value>Player has started the game.</value>
+  </data>
+  <data name="PlayerMovingBackward" xml:space="preserve">
+    <value>Player is moving backward.</value>
+    <comment>Movement label</comment>
+  </data>
+  <data name="PlayerMovingForward" xml:space="preserve">
+    <value>Player is moving forward.</value>
+    <comment>Movement label</comment>
+  </data>
+  <data name="PlayerMovingLeft" xml:space="preserve">
+    <value>Player is moving left.</value>
+    <comment>Movement label</comment>
+  </data>
+  <data name="PlayerMovingRight" xml:space="preserve">
+    <value>Player is moving right.</value>
+    <comment>Movement label</comment>
   </data>
 </root>

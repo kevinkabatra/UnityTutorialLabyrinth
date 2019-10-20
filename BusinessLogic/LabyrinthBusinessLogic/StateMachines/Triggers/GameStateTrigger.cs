@@ -1,6 +1,6 @@
 ﻿namespace LabyrinthBusinessLogic.StateMachines.Triggers
 {
-    public enum GameStateTriggers
+    public enum GameStateTrigger
     {
         StartGame,
         StopGame

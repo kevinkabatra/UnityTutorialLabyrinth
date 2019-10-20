@@ -1,6 +1,9 @@
 ﻿namespace LabyrinthBusinessLogic.StateMachines.States
 {
-    public enum GameStates
+    /// <summary>
+    ///     The various states of the application.
+    /// </summary>
+    public enum GameState
     {
         None,
         Playing,

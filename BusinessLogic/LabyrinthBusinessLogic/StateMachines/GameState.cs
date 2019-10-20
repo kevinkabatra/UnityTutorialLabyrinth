@@ -1,126 +1,65 @@
 ﻿namespace LabyrinthBusinessLogic.StateMachines
 {
-    using System;
     using Handlers.Displays;
-    using Stateless;
-    using States;
     using Triggers;
-    using Utilities;
 
     /// <summary>
     ///     The state machine to control the various states of the game.
     /// </summary>
-    public class GameState : StateMachine<GameStates, GameStateTriggers>
+    public class GameState : StateMachineAbstract<States.GameState, GameStateTrigger>
     {
-        private const GameStates GameNotStarted = GameStates.None;
-        private const GameStates UserPlayingGame = GameStates.Playing;
-        private const GameStates UserFinishedPlaying = GameStates.GameOver;
+        private const States.GameState GameNotStarted = States.GameState.None;
+        private const States.GameState UserPlayingGame = States.GameState.Playing;
+        private const States.GameState UserFinishedPlaying = States.GameState.GameOver;
 
-        private IDisplayHandler _displayHandler;
-        private ILabelRetriever _labelRetriever;
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="stateAccessor">A function that will be called to read the current state value.</param>
-        /// <param name="stateMutator">An action that will be called to write new state values.</param>
-        /// <param name="displayHandler">Handler that will display the messages from the state machine.</param>
-        public GameState(Func<GameStates> stateAccessor, Action<GameStates> stateMutator, IDisplayHandler displayHandler) : base(stateAccessor, stateMutator)
+        /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>
+        public GameState(States.GameState initialState, IDisplayHandler displayHandler) : base(initialState, displayHandler)
         {
-            Initialize(displayHandler);
             SetupStateMachine();
         }
 
-        /// <summary>
-        ///     Default constructor.
-        /// </summary>
-        /// <param name="initialState">Initial state to set the state machine to.</param>
-        /// <param name="displayHandler">Handler that will display the messages from the state machine.</param>
-        public GameState(GameStates initialState, IDisplayHandler displayHandler) : base(initialState)
+        /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>
+        private protected sealed override void SetupStateMachine()
         {
-            Initialize(displayHandler);
-            SetupStateMachine();
-        }
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="stateAccessor">A function that will be called to read the current state value.</param>
-        /// <param name="stateMutator">An action that will be called to write new state values.</param>
-        /// <param name="firingMode">Optional specification of firing mode.</param>
-        /// <param name="displayHandler">Handler that will display the messages from the state machine.</param>
-        public GameState(Func<GameStates> stateAccessor, Action<GameStates> stateMutator, FiringMode firingMode, IDisplayHandler displayHandler) : base(stateAccessor, stateMutator, firingMode)
-        {
-            Initialize(displayHandler);
-            SetupStateMachine();
-        }
-
-        /// <summary>
-        ///     Constructor.
-        /// </summary>
-        /// <param name="initialState">The initial state of the game.</param>
-        /// <param name="firingMode">Optional specification of firing mode.</param>
-        /// <param name="displayHandler">Handler that will display the messages from the state machine.</param>
-        public GameState(GameStates initialState, FiringMode firingMode, IDisplayHandler displayHandler) : base(initialState, firingMode)
-        {
-            Initialize(displayHandler);
-            SetupStateMachine();
-        }
-
-        /// <summary>
-        ///     Handles initialization for any instance variables of this class.
-        /// </summary>
-        /// <param name="displayHandler">The display handler to use.</param>
-        private void Initialize(IDisplayHandler displayHandler)
-        {
-            _displayHandler = displayHandler;
-            _labelRetriever = LabelRetriever.GetLabelRetriever();
-        }
-
-        /// <summary>
-        ///     Sets up the state machine.
-        /// </summary>
-        private void SetupStateMachine()
-        {
-            ConfigureStateMachineForGameStatesNone();
-            ConfigureStateMachineForGameStatesPlaying();
-            ConfigureStateMachineForGameStatesGameOver();
+            ConfigureStateMachineForGameStateNone();
+            ConfigureStateMachineForGameStatePlaying();
+            ConfigureStateMachineForGameStateGameOver();
         }
 
         /// <summary>
         ///     Configures the initial state of the application.
         /// </summary>
-        private void ConfigureStateMachineForGameStatesNone()
+        private void ConfigureStateMachineForGameStateNone()
         {
             Configure(GameNotStarted)
-                .Permit(GameStateTriggers.StartGame, UserPlayingGame)
-                .Ignore(GameStateTriggers.StopGame);
+                .Permit(GameStateTrigger.StartGame, UserPlayingGame)
+                .Ignore(GameStateTrigger.StopGame);
         }
 
         /// <summary>
         ///     Configures game start state.
         /// </summary>
-        private void ConfigureStateMachineForGameStatesPlaying()
+        private void ConfigureStateMachineForGameStatePlaying()
         {
-            var onEntryMessage = _labelRetriever.GameStart;
+            var onEntryMessage = LabelRetriever.GameStart;
 
             Configure(UserPlayingGame)
-                .OnEntry(() => _displayHandler.DisplayMessage(onEntryMessage))
-                .Permit(GameStateTriggers.StopGame, UserFinishedPlaying)
-                .Ignore(GameStateTriggers.StartGame);
+                .OnEntry(() => DisplayHandler.DisplayMessage(onEntryMessage))
+                .Permit(GameStateTrigger.StopGame, UserFinishedPlaying)
+                .Ignore(GameStateTrigger.StartGame);
         }
 
         /// <summary>
         ///     Configures game over state.
         /// </summary>
-        private void ConfigureStateMachineForGameStatesGameOver()
+        private void ConfigureStateMachineForGameStateGameOver()
         {
-            var onEntryMessage = _labelRetriever.GameOver;
+            var onEntryMessage = LabelRetriever.GameOver;
 
             Configure(UserFinishedPlaying)
-                .OnEntry(() => _displayHandler.DisplayMessage(onEntryMessage))
-                .Ignore(GameStateTriggers.StartGame)
-                .Ignore(GameStateTriggers.StopGame);
+                .OnEntry(() => DisplayHandler.DisplayMessage(onEntryMessage))
+                .Ignore(GameStateTrigger.StartGame)
+                .Ignore(GameStateTrigger.StopGame);
         }
     }
 }
