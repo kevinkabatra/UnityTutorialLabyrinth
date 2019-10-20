@@ -17,7 +17,7 @@
         private const GameStates UserFinishedPlaying = GameStates.GameOver;
 
         private IDisplayHandler _displayHandler;
-        private LabelRetriever _labelRetriever;
+        private ILabelRetriever _labelRetriever;
 
         /// <summary>
         ///     Constructor.
@@ -92,10 +92,7 @@
         /// </summary>
         private void ConfigureStateMachineForGameStatesNone()
         {
-            var onEntryMessage = _labelRetriever.ApplicationStart;
-
             Configure(GameNotStarted)
-                .OnEntry(() => _displayHandler.DisplayMessage(onEntryMessage))
                 .Permit(GameStateTriggers.StartGame, UserPlayingGame)
                 .Ignore(GameStateTriggers.StopGame);
         }

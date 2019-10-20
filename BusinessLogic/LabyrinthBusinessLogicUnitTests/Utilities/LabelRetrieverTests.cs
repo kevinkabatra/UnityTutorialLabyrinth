@@ -6,7 +6,7 @@
     using LabyrinthBusinessLogic.Utilities;
     using Xunit;
 
-    public class LabelsUnitTests : IDisposable
+    public class LabelRetrieverTests : IDisposable
     {
         /// <summary>
         ///     Need to reset the singleton after each test.
