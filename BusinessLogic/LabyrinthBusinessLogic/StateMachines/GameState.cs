@@ -92,7 +92,7 @@
         /// </summary>
         private void ConfigureStateMachineForGameStatesNone()
         {
-            var onEntryMessage = _labelRetriever.GetLabel("Application started.");
+            var onEntryMessage = _labelRetriever.ApplicationStart;
 
             Configure(GameNotStarted)
                 .OnEntry(() => _displayHandler.DisplayMessage(onEntryMessage))
@@ -105,7 +105,7 @@
         /// </summary>
         private void ConfigureStateMachineForGameStatesPlaying()
         {
-            var onEntryMessage = _labelRetriever.GetLabel("GameStart");
+            var onEntryMessage = _labelRetriever.GameStart;
 
             Configure(UserPlayingGame)
                 .OnEntry(() => _displayHandler.DisplayMessage(onEntryMessage))
@@ -118,7 +118,7 @@
         /// </summary>
         private void ConfigureStateMachineForGameStatesGameOver()
         {
-            var onEntryMessage = _labelRetriever.GetLabel("GameOver");
+            var onEntryMessage = _labelRetriever.GameOver;
 
             Configure(UserFinishedPlaying)
                 .OnEntry(() => _displayHandler.DisplayMessage(onEntryMessage))

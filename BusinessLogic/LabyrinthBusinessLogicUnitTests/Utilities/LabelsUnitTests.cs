@@ -26,25 +26,13 @@
         }
 
         [Fact]
-        public void CanRetrieveGameOverLabel()
-        {
-            var retriever = LabelRetriever.GetLabelRetriever();
-            
-            const string expectedLabelContent = "Thanks for playing, I hope that you enjoyed this game. - Kevin Kabatra 2019";
-            var actualLabelContent = retriever.GetLabel("GameOver");
-
-            Assert.NotEmpty(actualLabelContent);
-            Assert.Equal(expectedLabelContent, actualLabelContent);
-        }
-
-        [Fact]
-        public void CanRetrieveEnglishUnitedStatesTranslatedApplicationStartLabel()
+        public void CanRetrieveDefaultApplicationStartLabel()
         {
             var english = Cultures.EnglishUnitedStates;
             var retriever = LabelRetriever.GetLabelRetriever(english);
 
             const string expectedLabelContent = "Application started.";
-            var actualLabelContent = retriever.GetLabel("ApplicationStart");
+            var actualLabelContent = retriever.ApplicationStart;
 
             Assert.NotEmpty(actualLabelContent);
             Assert.Equal(expectedLabelContent, actualLabelContent);
@@ -52,13 +40,13 @@
 
         [Fact]
         [SuppressMessage("ReSharper", "StringLiteralTypo", Justification = "Content written in Spanish.")]
-        public void CanRetrieveSpanishSpainTranslatedApplicationStartLabel()
+        public void CanRetrieveTranslatedApplicationStartLabel()
         {
             var spanish = Cultures.SpanishSpain;
             var retriever = LabelRetriever.GetLabelRetriever(spanish);
 
             const string expectedLabelContent = "Programa iniciado.";
-            var actualLabelContent = retriever.GetLabel("ApplicationStart");
+            var actualLabelContent = retriever.ApplicationStart;
 
             Assert.NotEmpty(actualLabelContent);
             Assert.Equal(expectedLabelContent, actualLabelContent);

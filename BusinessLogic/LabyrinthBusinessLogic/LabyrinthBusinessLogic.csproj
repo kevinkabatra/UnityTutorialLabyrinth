@@ -9,10 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Labels-es-ES.Designer.cs">
+    <Compile Update="Properties\Labels.es-ES.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Labels-es-ES.resx</DependentUpon>
+      <DependentUpon>Labels.es-ES.resx</DependentUpon>
     </Compile>
     <Compile Update="Properties\Labels.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Labels-es-ES.resx">
+    <EmbeddedResource Update="Properties\Labels.es-ES.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Labels-es-ES.Designer.cs</LastGenOutput>
+      <LastGenOutput>Labels.es-ES.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Labels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
