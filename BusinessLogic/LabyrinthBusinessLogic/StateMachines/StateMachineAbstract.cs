@@ -5,6 +5,15 @@
     using Stateless;
     using Utilities;
 
+    /// <summary>
+    ///     Abstract of common functionality to the state machines.
+    /// </summary>
+    /// <typeparam name="TState">The state that the state machine will control.</typeparam>
+    /// <typeparam name="TTrigger">The trigger that will cause the state machine to update.</typeparam>
+    /// <remarks>
+    ///     Also since I am not using all of the base constructors I wanted to
+    /// use this abstract to hide them away.
+    /// </remarks>
     public abstract class StateMachineAbstract<TState, TTrigger> : StateMachine<TState, TTrigger>
     {
         private protected IDisplayHandler DisplayHandler;

@@ -6,6 +6,8 @@
     /// <summary>
     ///     The state machine to control the various states of the game.
     /// </summary>
+    /// <seealso href="https://refactoring.guru/design-patterns/state"/>
+    /// <seealso href="https://github.com/dotnet-state-machine/stateless"/>
     public class GameStateStateMachine : StateMachineAbstract<States.GameState, GameStateTrigger>
     {
         private const States.GameState GameNotStarted = States.GameState.None;

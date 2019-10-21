@@ -7,6 +7,8 @@
     /// <summary>
     ///     State machine to control the user's position within the world.
     /// </summary>
+    /// <seealso href="https://refactoring.guru/design-patterns/state"/>
+    /// <seealso href="https://github.com/dotnet-state-machine/stateless"/>
     public class WorldMapStateMachine : StateMachineAbstract<WorldMap, PlayerMovement>
     {
         /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>

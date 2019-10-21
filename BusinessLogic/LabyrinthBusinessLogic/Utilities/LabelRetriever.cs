@@ -9,6 +9,7 @@
     /// <summary>
     ///     Supports getting labels from a language specific resource file.
     /// </summary>
+    /// <seealso href="https://refactoring.guru/design-patterns/singleton"/>
     /// <remarks>Singleton class.</remarks>
     [SuppressMessage("Microsoft.Performance","CA1822", Justification = "Instance determines translation")]
     public class LabelRetriever
