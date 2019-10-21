@@ -25,7 +25,7 @@
             var displayHandler = _mockDisplayHandler.Object;
             const GameState gameState = GameState.None;
             
-            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameState(gameState, displayHandler);
+            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameStateStateMachine(gameState, displayHandler);
 
             Assert.NotNull(stateMachine);
         }
@@ -36,7 +36,7 @@
             var displayHandler = _mockDisplayHandler.Object;
             const GameState gameState = GameState.None;
             
-            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameState(gameState, displayHandler);
+            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameStateStateMachine(gameState, displayHandler);
             stateMachine.Fire(GameStateTrigger.StartGame);
 
             const GameState expectedState = GameState.Playing;
@@ -52,7 +52,7 @@
             var displayHandler = _mockDisplayHandler.Object;
             const GameState gameState = GameState.Playing;
 
-            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameState(gameState, displayHandler);
+            var stateMachine = new LabyrinthBusinessLogic.StateMachines.GameStateStateMachine(gameState, displayHandler);
             stateMachine.Fire(GameStateTrigger.StopGame);
 
             const GameState expectedState = GameState.GameOver;

@@ -6,14 +6,14 @@
     /// <summary>
     ///     The state machine to control the various states of the game.
     /// </summary>
-    public class GameState : StateMachineAbstract<States.GameState, GameStateTrigger>
+    public class GameStateStateMachine : StateMachineAbstract<States.GameState, GameStateTrigger>
     {
         private const States.GameState GameNotStarted = States.GameState.None;
         private const States.GameState UserPlayingGame = States.GameState.Playing;
         private const States.GameState UserFinishedPlaying = States.GameState.GameOver;
 
         /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>
-        public GameState(States.GameState initialState, IDisplayHandler displayHandler) : base(initialState, displayHandler)
+        public GameStateStateMachine(States.GameState initialState, IDisplayHandler displayHandler) : base(initialState, displayHandler)
         {
             SetupStateMachine();
         }

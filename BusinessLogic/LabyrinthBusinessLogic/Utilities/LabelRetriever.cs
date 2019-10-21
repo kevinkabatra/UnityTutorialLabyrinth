@@ -1,5 +1,6 @@
 ﻿namespace LabyrinthBusinessLogic.Utilities
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.Threading;
     using Cultures;
@@ -9,6 +10,7 @@
     ///     Supports getting labels from a language specific resource file.
     /// </summary>
     /// <remarks>Singleton class.</remarks>
+    [SuppressMessage("Microsoft.Performance","CA1822", Justification = "Instance determines translation")]
     public class LabelRetriever
     {
         private static LabelRetriever _retriever;

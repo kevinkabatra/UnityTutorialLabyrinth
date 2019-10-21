@@ -5,6 +5,7 @@
     /// </summary>
     public enum GamePiece
     {
+        Start,
         VerticalPipe,
         HorizontalPipe,
         VerticalT,
@@ -12,6 +13,9 @@
         FlippedVerticalT,
         FlippedHorizontalT,
         LeftTurnRightAngle,
-        RightTurnRightAngle
+        RightTurnRightAngle,
+        FlippedLeftTurnRightAngle,
+        FlippedRightTurnRightAngle,
+        Exit
     }
 }
