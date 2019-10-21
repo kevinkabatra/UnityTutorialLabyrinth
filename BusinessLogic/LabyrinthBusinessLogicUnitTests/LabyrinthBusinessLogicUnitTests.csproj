@@ -18,4 +18,10 @@
     <ProjectReference Include="..\LabyrinthBusinessLogic\LabyrinthBusinessLogic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Stateless">
+      <HintPath>..\..\..\..\..\..\.nuget\packages\stateless\4.2.1\lib\net40\Stateless.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
