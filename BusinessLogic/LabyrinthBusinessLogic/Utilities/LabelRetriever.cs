@@ -29,6 +29,16 @@
         public string PlayerMovingRight => Labels.PlayerMovingRight;
         #endregion
 
+        #region User instruction labels
+        public string ForwardOnlyMovement => Labels.ForwardOnlyMovement;
+        public string ForwardOrBackwardMovement => Labels.ForwardOrBackwardMovement;
+        public string ForwardOrLeftMovement => Labels.ForwardOrLeftMovement;
+        public string ForwardOrRightMovement => Labels.ForwardOrRightMovement;
+        public string BackwardOrLeftMovement => Labels.BackwardOrLeftMovement;
+        public string BackwardOrRightMovement => Labels.BackwardOrRightMovement;
+        public string LeftOrRightMovement => Labels.LeftOrRightMovement;
+        #endregion
+
         /// <summary>
         ///     Returns a singleton instance of <c>LabelRetriever</c>.
         /// </summary>

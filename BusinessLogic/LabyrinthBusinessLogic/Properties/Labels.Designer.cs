@@ -70,6 +70,60 @@ namespace LabyrinthBusinessLogic.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Player, you can move backward or left..
+        /// </summary>
+        public static string BackwardOrLeftMovement {
+            get {
+                return ResourceManager.GetString("BackwardOrLeftMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player, you can move backward or right..
+        /// </summary>
+        public static string BackwardOrRightMovement {
+            get {
+                return ResourceManager.GetString("BackwardOrRightMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player, you can only move forward from here..
+        /// </summary>
+        public static string ForwardOnlyMovement {
+            get {
+                return ResourceManager.GetString("ForwardOnlyMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player, you can move forward or backward..
+        /// </summary>
+        public static string ForwardOrBackwardMovement {
+            get {
+                return ResourceManager.GetString("ForwardOrBackwardMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player, you can move forward or left..
+        /// </summary>
+        public static string ForwardOrLeftMovement {
+            get {
+                return ResourceManager.GetString("ForwardOrLeftMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player, you can move forward or right..
+        /// </summary>
+        public static string ForwardOrRightMovement {
+            get {
+                return ResourceManager.GetString("ForwardOrRightMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thanks for playing, I hope that you enjoyed this game. - Kevin Kabatra 2019.
         /// </summary>
         public static string GameOver {
@@ -84,6 +138,15 @@ namespace LabyrinthBusinessLogic.Properties {
         public static string GameStart {
             get {
                 return ResourceManager.GetString("GameStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player, you can move left or right..
+        /// </summary>
+        public static string LeftOrRightMovement {
+            get {
+                return ResourceManager.GetString("LeftOrRightMovement", resourceCulture);
             }
         }
         

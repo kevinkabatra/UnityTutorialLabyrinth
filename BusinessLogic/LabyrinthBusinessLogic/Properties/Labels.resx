@@ -119,12 +119,43 @@
   </resheader>
   <data name="ApplicationStart" xml:space="preserve">
     <value>Application started.</value>
+    <comment>Application label</comment>
+  </data>
+  <data name="BackwardOrLeftMovement" xml:space="preserve">
+    <value>Player, you can move backward or left.</value>
+    <comment>User instructions label</comment>
+  </data>
+  <data name="BackwardOrRightMovement" xml:space="preserve">
+    <value>Player, you can move backward or right.</value>
+    <comment>User instructions label</comment>
+  </data>
+  <data name="ForwardOnlyMovement" xml:space="preserve">
+    <value>Player, you can only move forward from here.</value>
+    <comment>User instructions label</comment>
+  </data>
+  <data name="ForwardOrBackwardMovement" xml:space="preserve">
+    <value>Player, you can move forward or backward.</value>
+    <comment>User instructions label</comment>
+  </data>
+  <data name="ForwardOrLeftMovement" xml:space="preserve">
+    <value>Player, you can move forward or left.</value>
+    <comment>User instructions label</comment>
+  </data>
+  <data name="ForwardOrRightMovement" xml:space="preserve">
+    <value>Player, you can move forward or right.</value>
+    <comment>User instructions label</comment>
   </data>
   <data name="GameOver" xml:space="preserve">
     <value>Thanks for playing, I hope that you enjoyed this game. - Kevin Kabatra 2019</value>
+    <comment>Application label</comment>
   </data>
   <data name="GameStart" xml:space="preserve">
     <value>Player has started the game.</value>
+    <comment>Application label</comment>
+  </data>
+  <data name="LeftOrRightMovement" xml:space="preserve">
+    <value>Player, you can move left or right.</value>
+    <comment>User instructions label</comment>
   </data>
   <data name="PlayerMovingBackward" xml:space="preserve">
     <value>Player is moving backward.</value>
