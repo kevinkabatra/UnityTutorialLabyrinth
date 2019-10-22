@@ -1,18 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DisplayHandler : MonoBehaviour
+﻿namespace Assets.Code.Handlers.Display
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    using LabyrinthBusinessLogic.Handlers.Displays;
+    using UnityEngine;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    ///     Implementation of the Display Handler interface.
+    /// </summary>
+    public class DisplayHandler : IDisplayHandler
     {
-        
+        /// <summary>
+        ///     Displays a message to the user.
+        /// </summary>
+        /// <param name="message">Message to display.</param>
+        public void DisplayMessage(string message)
+        {
+            Debug.Log(message);
+        }
     }
 }

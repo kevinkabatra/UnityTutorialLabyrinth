@@ -1,18 +1,129 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Main : MonoBehaviour
+﻿// ReSharper disable UnusedMember.Global, Start and Update are called by the Unity Engine, attached to Scene.Main.
+namespace Assets.Code
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    using System;
+    using Handlers.Display;
+    using Handlers.Input;
+    using LabyrinthBusinessLogic.StateMachines;
+    using LabyrinthBusinessLogic.StateMachines.States;
+    using LabyrinthBusinessLogic.StateMachines.Triggers;
+    using UnityEngine;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    ///     Entry point to the application.
+    /// </summary>
+    /// <remarks>
+    ///     This class follows the Mediator design pattern. All
+    /// communication between the various components originates
+    /// within this class.
+    /// </remarks>
+    /// <seealso href="https://refactoring.guru/design-patterns/mediator"/>
+    public class Main : MonoBehaviour
     {
-        
+        private DisplayHandler _displayHandler;
+        private InputHandler _inputHandler;
+
+        private GameStateStateMachine _gameStateStateMachine;
+        private WorldMapStateMachine _worldMapStateMachine;
+
+        /// <summary>
+        ///     Start is called before the first frame update.
+        /// </summary>
+        /// <remarks>
+        ///     Unity Engine method.
+        /// </remarks>
+        public void Start()
+        {
+            Initialize();
+            DisplayStartMessage();
+        }
+
+        /// <summary>
+        ///     Update is called once per frame. 
+        /// </summary>
+        /// <remarks>
+        ///     Unity Engine method.
+        /// </remarks>
+        public void Update()
+        {
+            HandleUserInput();
+        }
+
+        /// <summary>
+        ///     Displays the start message to the user.
+        /// </summary>
+        private static void DisplayStartMessage()
+        {
+            var startMessage = $"Press the space bar when ready to continue...";
+            Debug.Log(startMessage);
+        }
+
+        /// <summary>
+        ///     Handler for all keyboard input, actions taken depend on the Game State.
+        /// </summary>
+        private void HandleUserInput()
+        {
+            var currentGameState = _gameStateStateMachine.State;
+
+            var input = _inputHandler.Listen();
+            // ReSharper disable once SwitchStatementMissingSomeCases, most inputs are not supported.
+            switch (input)
+            {
+                case KeyCode.Space:
+                    if (currentGameState == GameState.None)
+                    {
+                        _gameStateStateMachine.Fire(GameStateTrigger.StartGame);
+                        _worldMapStateMachine.Fire(PlayerMovement.Forward);
+                    }
+                    break;
+
+                case KeyCode.None:
+                    break;
+
+                case KeyCode.UpArrow:
+                    if (currentGameState == GameState.Playing)
+                    {
+                        _worldMapStateMachine.Fire(PlayerMovement.Forward);
+                    }
+                    break;
+
+                case KeyCode.DownArrow:
+                    if (currentGameState == GameState.Playing)
+                    {
+                        _worldMapStateMachine.Fire(PlayerMovement.Backward);
+                    }
+                    break;
+
+                case KeyCode.LeftArrow:
+                    if (currentGameState == GameState.Playing)
+                    {
+                        _worldMapStateMachine.Fire(PlayerMovement.Left);
+                    }
+                    break;
+
+                case KeyCode.RightArrow:
+                    if (currentGameState == GameState.Playing)
+                    {
+                        _worldMapStateMachine.Fire(PlayerMovement.Right);
+                    }
+                    break;
+
+                default:
+                    var errorMessage = $"KeyCode: {input} is not supported.";
+                    throw new NotSupportedException(errorMessage);
+            }
+        }
+
+        /// <summary>
+        ///     Initializes all of the components.
+        /// </summary>
+        private void Initialize()
+        {
+            _displayHandler = new DisplayHandler();
+            _inputHandler = new InputHandler();
+
+            _gameStateStateMachine = new GameStateStateMachine(GameState.None, _displayHandler);
+            _worldMapStateMachine = new WorldMapStateMachine(WorldMap.None, _displayHandler);
+        }
     }
 }

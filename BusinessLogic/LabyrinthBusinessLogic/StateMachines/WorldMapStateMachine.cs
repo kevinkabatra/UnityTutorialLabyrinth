@@ -20,6 +20,7 @@
         /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>
         private protected sealed override void SetupStateMachine()
         {
+            ConfigureForStateNone();
             ConfigureFirstPiece();
             ConfigureSecondPiece();
             ConfigureThirdPiece();
@@ -33,7 +34,16 @@
             ConfigureEleventhPiece();
             ConfigureTwelfthPiece();
         }
-        
+
+        private void ConfigureForStateNone()
+        {
+            Configure(WorldMap.None)
+                .Permit(PlayerMovement.Forward, WorldMap.FirstPieceStart)
+                .Ignore(PlayerMovement.Backward)
+                .Ignore(PlayerMovement.Left)
+                .Ignore(PlayerMovement.Right);
+        }
+
         /// <summary>
         ///     Configures player allowed movement for this piece.
         /// </summary>

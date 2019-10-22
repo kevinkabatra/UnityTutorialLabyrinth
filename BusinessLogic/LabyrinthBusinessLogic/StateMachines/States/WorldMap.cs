@@ -5,6 +5,7 @@
     /// </summary>
     public enum WorldMap
     {
+        None,
         FirstPieceStart,
         SecondPieceVerticalPipe,
         ThirdPieceVerticalPipe,
