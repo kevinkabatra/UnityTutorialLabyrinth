@@ -52,10 +52,10 @@ namespace Assets.Code
         /// <summary>
         ///     Displays the start message to the user.
         /// </summary>
-        private static void DisplayStartMessage()
+        private void DisplayStartMessage()
         {
             var startMessage = $"Press the space bar when ready to continue...";
-            Debug.Log(startMessage);
+            _displayHandler.DisplayMessage(startMessage);
         }
 
         /// <summary>

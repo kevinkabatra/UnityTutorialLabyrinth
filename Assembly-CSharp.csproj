@@ -66,6 +66,7 @@
     <Compile Include="Assets\Code\Handlers\Display\DisplayHandler.cs" />
     <Compile Include="Assets\Code\Handlers\Input\InputHandler.cs" />
     <Compile Include="Assets\Code\Main.cs" />
+    <Compile Include="Assets\Code\View.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
