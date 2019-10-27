@@ -120,10 +120,13 @@ namespace Assets.Code
         private void Initialize()
         {
             _displayHandler = new DisplayHandler();
+
             _inputHandler = new InputHandler();
 
             _gameStateStateMachine = new GameStateStateMachine(GameState.None, _displayHandler);
-            _worldMapStateMachine = new WorldMapStateMachine(WorldMap.None, _displayHandler);
+            _worldMapStateMachine = new WorldMapStateMachine(LabyrinthBusinessLogic.StateMachines.States.WorldMap.None, _displayHandler);
+
+            _displayHandler.HideAllTileMaps();
         }
     }
 }

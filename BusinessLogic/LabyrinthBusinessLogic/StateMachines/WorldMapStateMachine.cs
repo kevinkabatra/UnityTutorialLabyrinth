@@ -51,6 +51,7 @@
         {
             Configure(WorldMap.FirstPieceStart)
                 .OnEntry(() => DisplayHandler.DisplayMessage(LabelRetriever.ForwardOnlyMovement))
+                .OnEntry(() => DisplayHandler.DisplayStartTileMap())
                 .Permit(PlayerMovement.Forward, WorldMap.SecondPieceVerticalPipe)
                 .Ignore(PlayerMovement.Backward)
                 .Ignore(PlayerMovement.Left)
@@ -64,6 +65,7 @@
         {
             Configure(WorldMap.SecondPieceVerticalPipe)
                 .OnEntry(() => DisplayHandler.DisplayMessage(LabelRetriever.ForwardOrBackwardMovement))
+                .OnEntry(DisplayHandler.DisplayVerticalPipeTileMap)
                 .Permit(PlayerMovement.Forward, WorldMap.ThirdPieceVerticalPipe)
                 .Permit(PlayerMovement.Backward, WorldMap.FirstPieceStart)
                 .Ignore(PlayerMovement.Left)
@@ -77,6 +79,7 @@
         {
             Configure(WorldMap.ThirdPieceVerticalPipe)
                 .OnEntry(() => DisplayHandler.DisplayMessage(LabelRetriever.ForwardOrBackwardMovement))
+                .OnEntry(DisplayHandler.DisplayVerticalPipeTileMap)
                 .Permit(PlayerMovement.Forward, WorldMap.FourthPieceVerticalT)
                 .Permit(PlayerMovement.Backward, WorldMap.SecondPieceVerticalPipe)
                 .Ignore(PlayerMovement.Left)

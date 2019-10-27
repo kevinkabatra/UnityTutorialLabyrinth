@@ -18,9 +18,39 @@
             SendMessageToView(message);
         }
 
-        public void DisplayImage()
+        public void DisplayStartTileMap()
         {
-            //backgroundImage.
+            var worldMap = GetWorldMap();
+
+            HideAllTileMaps(worldMap);
+            worldMap.StartTileMap.enabled = true;
+        }
+
+        public void DisplayVerticalPipeTileMap()
+        {
+            var worldMap = GetWorldMap();
+
+            HideAllTileMaps(worldMap);
+            worldMap.VerticalPipeTileMap.enabled = true;
+        }
+
+        public void HideAllTileMaps(WorldMap worldMap = null)
+        {
+            if (worldMap == null)
+            {
+                worldMap = GetWorldMap();
+            }
+
+            worldMap.StartTileMap.enabled = false;
+            worldMap.VerticalPipeTileMap.enabled = false;
+        }
+
+        private static WorldMap GetWorldMap()
+        {
+            var worldMapGameObject = GameObject.Find("WorldMap");
+            var worldMap = worldMapGameObject.GetComponent<WorldMap>();
+
+            return worldMap;
         }
 
         private static void SendMessageToDebugger(string message)

@@ -6,5 +6,7 @@
     public interface IDisplayHandler
     {
         void DisplayMessage(string message);
+        void DisplayStartTileMap();
+        void DisplayVerticalPipeTileMap();
     }
 }
