@@ -80,6 +80,7 @@
             Configure(WorldMap.ThirdPieceVerticalPipe)
                 .OnEntry(() => DisplayHandler.DisplayMessage(LabelRetriever.ForwardOrBackwardMovement))
                 .OnEntry(DisplayHandler.DisplayVerticalPipeTileMap)
+                .OnEntry(DisplayHandler.DisplayVerticalPipeModifierTileMap)
                 .Permit(PlayerMovement.Forward, WorldMap.FourthPieceVerticalT)
                 .Permit(PlayerMovement.Backward, WorldMap.SecondPieceVerticalPipe)
                 .Ignore(PlayerMovement.Left)

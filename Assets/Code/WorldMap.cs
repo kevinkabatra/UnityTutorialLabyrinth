@@ -7,5 +7,6 @@
     {
         [SerializeField] public TilemapRenderer StartTileMap;
         [SerializeField] public TilemapRenderer VerticalPipeTileMap;
+        [SerializeField] public TilemapRenderer VerticalPipeModifierTileMap;
     }
 }

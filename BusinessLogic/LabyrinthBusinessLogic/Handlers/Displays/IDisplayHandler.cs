@@ -8,5 +8,6 @@
         void DisplayMessage(string message);
         void DisplayStartTileMap();
         void DisplayVerticalPipeTileMap();
+        void DisplayVerticalPipeModifierTileMap();
     }
 }

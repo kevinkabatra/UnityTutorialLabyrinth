@@ -34,6 +34,15 @@
             worldMap.VerticalPipeTileMap.enabled = true;
         }
 
+        public void DisplayVerticalPipeModifierTileMap()
+        {
+            var worldMap = GetWorldMap();
+
+            HideAllTileMaps(worldMap);
+            worldMap.VerticalPipeTileMap.enabled = true;
+            worldMap.VerticalPipeModifierTileMap.enabled = true;
+        }
+
         public void HideAllTileMaps(WorldMap worldMap = null)
         {
             if (worldMap == null)
@@ -43,6 +52,7 @@
 
             worldMap.StartTileMap.enabled = false;
             worldMap.VerticalPipeTileMap.enabled = false;
+            worldMap.VerticalPipeModifierTileMap.enabled = false;
         }
 
         private static WorldMap GetWorldMap()
