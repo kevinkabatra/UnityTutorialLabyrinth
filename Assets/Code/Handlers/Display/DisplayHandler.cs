@@ -18,41 +18,92 @@
             SendMessageToView(message);
         }
 
-        public void DisplayStartTileMap()
+        public void DisplayStart()
         {
-            var worldMap = GetWorldMap();
-
-            HideAllTileMaps(worldMap);
-            worldMap.StartTileMap.enabled = true;
+            var worldMap = GetCleanWorldMap();
+            worldMap.Start.enabled = true;
         }
 
-        public void DisplayVerticalPipeTileMap()
+        public void DisplayVerticalPipe()
         {
-            var worldMap = GetWorldMap();
-
-            HideAllTileMaps(worldMap);
-            worldMap.VerticalPipeTileMap.enabled = true;
+            var worldMap = GetCleanWorldMap();
+            worldMap.VerticalPipe.enabled = true;
         }
 
-        public void DisplayVerticalPipeModifierTileMap()
+        public void DisplayVerticalPipeModifier()
         {
-            var worldMap = GetWorldMap();
-
-            HideAllTileMaps(worldMap);
-            worldMap.VerticalPipeTileMap.enabled = true;
-            worldMap.VerticalPipeModifierTileMap.enabled = true;
+            var worldMap = GetCleanWorldMap();
+            worldMap.VerticalPipe.enabled = true;
+            worldMap.VerticalPipeModifier.enabled = true;
         }
 
-        public void HideAllTileMaps(WorldMap worldMap = null)
+        public void DisplayVerticalT()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.VerticalT.enabled = true;
+        }
+
+        public void DisplayHorizontalPipe()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.HorizontalPipe.enabled = true;
+        }
+
+        public void DisplayFlippedLeftAngle()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.FlippedLeftAngle.enabled = true;
+        }
+
+        public void DisplayLeftAngle()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.LeftAngle.enabled = true;
+        }
+
+        public void DisplayFlippedHorizontalT()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.FlippedHorizontalT.enabled = true;
+        }
+
+        public void DisplayFlippedRightAngle()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.FlippedRightAngle.enabled = true;
+        }
+
+        public void DisplayEnd()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.End.enabled = true;
+        }
+
+        public void HideAll(WorldMap worldMap = null)
         {
             if (worldMap == null)
             {
                 worldMap = GetWorldMap();
             }
 
-            worldMap.StartTileMap.enabled = false;
-            worldMap.VerticalPipeTileMap.enabled = false;
-            worldMap.VerticalPipeModifierTileMap.enabled = false;
+            worldMap.Start.enabled = false;
+            worldMap.VerticalPipe.enabled = false;
+            worldMap.VerticalPipeModifier.enabled = false;
+            worldMap.VerticalT.enabled = false;
+            worldMap.HorizontalPipe.enabled = false;
+            worldMap.FlippedLeftAngle.enabled = false;
+            worldMap.LeftAngle.enabled = false;
+            worldMap.FlippedHorizontalT.enabled = false;
+            worldMap.FlippedRightAngle.enabled = false;
+            worldMap.End.enabled = false;
+        }
+
+        private WorldMap GetCleanWorldMap()
+        {
+            var worldMap = GetWorldMap();
+            HideAll(worldMap);
+            
+            return worldMap;
         }
 
         private static WorldMap GetWorldMap()

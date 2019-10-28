@@ -14,6 +14,5 @@
     public class View : MonoBehaviour
     {
         [SerializeField] public Text userInstructions;
-        [SerializeField] public Image backgroundImage;
     }
 }

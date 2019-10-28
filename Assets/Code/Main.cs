@@ -126,7 +126,7 @@ namespace Assets.Code
             _gameStateStateMachine = new GameStateStateMachine(GameState.None, _displayHandler);
             _worldMapStateMachine = new WorldMapStateMachine(LabyrinthBusinessLogic.StateMachines.States.WorldMap.None, _displayHandler);
 
-            _displayHandler.HideAllTileMaps();
+            _displayHandler.HideAll();
         }
     }
 }

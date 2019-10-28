@@ -6,8 +6,15 @@
     public interface IDisplayHandler
     {
         void DisplayMessage(string message);
-        void DisplayStartTileMap();
-        void DisplayVerticalPipeTileMap();
-        void DisplayVerticalPipeModifierTileMap();
+        void DisplayStart();
+        void DisplayVerticalPipe();
+        void DisplayVerticalPipeModifier();
+        void DisplayVerticalT();
+        void DisplayHorizontalPipe();
+        void DisplayFlippedLeftAngle();
+        void DisplayLeftAngle();
+        void DisplayFlippedHorizontalT();
+        void DisplayFlippedRightAngle();
+        void DisplayEnd();
     }
 }
