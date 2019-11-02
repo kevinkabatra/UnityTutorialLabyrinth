@@ -47,6 +47,13 @@
         {
             var worldMap = GetCleanWorldMap();
             worldMap.HorizontalPipe.enabled = true;
+            worldMap.HorizontalPipeOverlay.enabled = true;
+        }
+
+        public void DisplayHorizontalPipe2()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.HorizontalPipe2.enabled = true;
         }
 
         public void DisplayFlippedLeftAngle()
@@ -61,6 +68,13 @@
             worldMap.LeftAngle.enabled = true;
         }
 
+        public void DisplayLeftAngleModifier()
+        {
+            var worldMap = GetCleanWorldMap();
+            worldMap.LeftAngle.enabled = true;
+            worldMap.LeftAngleModifier.enabled = true;
+        }
+
         public void DisplayFlippedHorizontalT()
         {
             var worldMap = GetCleanWorldMap();
@@ -71,12 +85,15 @@
         {
             var worldMap = GetCleanWorldMap();
             worldMap.FlippedRightAngle.enabled = true;
+            worldMap.FlippedRightAngleOverlay.enabled = true;
         }
 
         public void DisplayEnd()
         {
             var worldMap = GetCleanWorldMap();
             worldMap.End.enabled = true;
+            worldMap.EndOverlay.enabled = true;
+            worldMap.EndOverlay2.enabled = true;
         }
 
         public void HideAll(WorldMap worldMap = null)
@@ -91,11 +108,17 @@
             worldMap.VerticalPipeModifier.enabled = false;
             worldMap.VerticalT.enabled = false;
             worldMap.HorizontalPipe.enabled = false;
+            worldMap.HorizontalPipe2.enabled = false;
+            worldMap.HorizontalPipeOverlay.enabled = false;
             worldMap.FlippedLeftAngle.enabled = false;
             worldMap.LeftAngle.enabled = false;
+            worldMap.LeftAngleModifier.enabled = false;
             worldMap.FlippedHorizontalT.enabled = false;
             worldMap.FlippedRightAngle.enabled = false;
+            worldMap.FlippedRightAngleOverlay.enabled = false;
             worldMap.End.enabled = false;
+            worldMap.EndOverlay.enabled = false;
+            worldMap.EndOverlay2.enabled = false;
         }
 
         private WorldMap GetCleanWorldMap()

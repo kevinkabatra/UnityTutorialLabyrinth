@@ -151,7 +151,7 @@
         {
             Configure(WorldMap.EighthPieceHorizontalPipe)
                 .OnEntry(() => DisplayHandler.DisplayMessage(LabelRetriever.LeftOrRightMovement))
-                .OnEntry(() => DisplayHandler.DisplayHorizontalPipe())
+                .OnEntry(() => DisplayHandler.DisplayHorizontalPipe2())
                 .Ignore(PlayerMovement.Forward)
                 .Ignore(PlayerMovement.Backward)
                 .Permit(PlayerMovement.Left, WorldMap.NinthPieceFlippedHorizontalT)
@@ -179,7 +179,7 @@
         {
             Configure(WorldMap.TenthPieceLeftAngle)
                 .OnEntry(() => DisplayHandler.DisplayMessage(LabelRetriever.BackwardOrLeftMovement))
-                .OnEntry(() => DisplayHandler.DisplayLeftAngle())
+                .OnEntry(() => DisplayHandler.DisplayLeftAngleModifier())
                 .Ignore(PlayerMovement.Forward)
                 .Permit(PlayerMovement.Backward, WorldMap.NinthPieceFlippedHorizontalT)
                 .Permit(PlayerMovement.Left, WorldMap.EleventhPieceFlippedRightAngle)
