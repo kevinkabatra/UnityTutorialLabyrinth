@@ -2,6 +2,7 @@
 {
     using LabyrinthBusinessLogic.Handlers.Displays;
     using UnityEngine;
+    using UnityEngine.Tilemaps;
 
     /// <summary>
     ///     Implementation of the Display Handler interface.
@@ -41,6 +42,7 @@
         {
             var worldMap = GetCleanWorldMap();
             worldMap.VerticalT.enabled = true;
+            worldMap.VerticalTRoadBlock.enabled = true;
         }
 
         public void DisplayHorizontalPipe()
@@ -103,22 +105,11 @@
                 worldMap = GetWorldMap();
             }
 
-            worldMap.Start.enabled = false;
-            worldMap.VerticalPipe.enabled = false;
-            worldMap.VerticalPipeModifier.enabled = false;
-            worldMap.VerticalT.enabled = false;
-            worldMap.HorizontalPipe.enabled = false;
-            worldMap.HorizontalPipe2.enabled = false;
-            worldMap.HorizontalPipeOverlay.enabled = false;
-            worldMap.FlippedLeftAngle.enabled = false;
-            worldMap.LeftAngle.enabled = false;
-            worldMap.LeftAngleModifier.enabled = false;
-            worldMap.FlippedHorizontalT.enabled = false;
-            worldMap.FlippedRightAngle.enabled = false;
-            worldMap.FlippedRightAngleOverlay.enabled = false;
-            worldMap.End.enabled = false;
-            worldMap.EndOverlay.enabled = false;
-            worldMap.EndOverlay2.enabled = false;
+            foreach (var serializedFields in worldMap.GetType().GetFields())
+            {
+                var tileMapRenderer = (TilemapRenderer)serializedFields.GetValue(worldMap);
+                tileMapRenderer.enabled = false;
+            }
         }
 
         private WorldMap GetCleanWorldMap()

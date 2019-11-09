@@ -9,6 +9,7 @@
         [SerializeField] public TilemapRenderer VerticalPipe;
         [SerializeField] public TilemapRenderer VerticalPipeModifier;
         [SerializeField] public TilemapRenderer VerticalT;
+        [SerializeField] public TilemapRenderer VerticalTRoadBlock;
         [SerializeField] public TilemapRenderer HorizontalPipe;
         [SerializeField] public TilemapRenderer HorizontalPipe2;
         [SerializeField] public TilemapRenderer HorizontalPipeOverlay;
