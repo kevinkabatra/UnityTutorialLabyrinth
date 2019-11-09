@@ -81,6 +81,7 @@
         {
             var worldMap = GetCleanWorldMap();
             worldMap.FlippedHorizontalT.enabled = true;
+            worldMap.FlippedHorizontalTRoadBlock.enabled = true;
         }
 
         public void DisplayFlippedRightAngle()

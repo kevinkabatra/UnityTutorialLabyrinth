@@ -17,6 +17,7 @@
         [SerializeField] public TilemapRenderer LeftAngle;
         [SerializeField] public TilemapRenderer LeftAngleModifier;
         [SerializeField] public TilemapRenderer FlippedHorizontalT;
+        [SerializeField] public TilemapRenderer FlippedHorizontalTRoadBlock;
         [SerializeField] public TilemapRenderer FlippedRightAngle;
         [SerializeField] public TilemapRenderer FlippedRightAngleOverlay;
         [SerializeField] public TilemapRenderer End;
