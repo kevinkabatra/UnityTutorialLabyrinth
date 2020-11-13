@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplicationStart" xml:space="preserve">
-    <value>Application started.</value>
-    <comment>Application label</comment>
-  </data>
   <data name="BackwardOrLeftMovement" xml:space="preserve">
     <value>Player, you can move backward or left.</value>
     <comment>User instructions label</comment>
@@ -144,14 +140,6 @@
   <data name="ForwardOrRightMovement" xml:space="preserve">
     <value>Player, you can move forward or right.</value>
     <comment>User instructions label</comment>
-  </data>
-  <data name="GameOver" xml:space="preserve">
-    <value>Thanks for playing, I hope that you enjoyed this game. - Kevin Kabatra 2019</value>
-    <comment>Application label</comment>
-  </data>
-  <data name="GameStart" xml:space="preserve">
-    <value>Player has started the game.</value>
-    <comment>Application label</comment>
   </data>
   <data name="LeftOrRightMovement" xml:space="preserve">
     <value>Player, you can move left or right.</value>

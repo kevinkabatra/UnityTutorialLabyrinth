@@ -2,7 +2,7 @@
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using LabyrinthBusinessLogic.Cultures;
+    using Kabatra.Common.LabelRetriever.Cultures;
     using LabyrinthBusinessLogic.Utilities;
     using Xunit;
 

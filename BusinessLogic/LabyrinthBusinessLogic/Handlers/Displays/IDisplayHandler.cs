@@ -3,9 +3,8 @@
     /// <summary>
     ///     Interface for displays.
     /// </summary>
-    public interface IDisplayHandler
+    public interface IDisplayHandler : Kabatra.Game.StateMachine.Handlers.Displays.IDisplayHandler
     {
-        void DisplayMessage(string message);
         void DisplayStart();
         void DisplayVerticalPipe();
         void DisplayVerticalPipeModifier();

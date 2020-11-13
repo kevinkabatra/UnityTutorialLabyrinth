@@ -61,15 +61,6 @@ namespace LabyrinthBusinessLogic.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application started..
-        /// </summary>
-        public static string ApplicationStart {
-            get {
-                return ResourceManager.GetString("ApplicationStart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Player, you can move backward or left..
         /// </summary>
         public static string BackwardOrLeftMovement {
@@ -120,24 +111,6 @@ namespace LabyrinthBusinessLogic.Properties {
         public static string ForwardOrRightMovement {
             get {
                 return ResourceManager.GetString("ForwardOrRightMovement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Thanks for playing, I hope that you enjoyed this game. - Kevin Kabatra 2019.
-        /// </summary>
-        public static string GameOver {
-            get {
-                return ResourceManager.GetString("GameOver", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Player has started the game..
-        /// </summary>
-        public static string GameStart {
-            get {
-                return ResourceManager.GetString("GameStart", resourceCulture);
             }
         }
         

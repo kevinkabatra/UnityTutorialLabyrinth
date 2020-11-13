@@ -1,21 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\kevin\Documents\MySource\Unity Tutorials\Labyrinth\Assets\References\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Stateless">
-      <HintPath>..\..\..\..\..\..\.nuget\packages\stateless\4.2.1\lib\net40\Stateless.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Kabatra.Game.StateMachine" Version="1.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Labels.es-ES.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Labels.es-ES.resx</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Labels.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -24,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Labels.es-ES.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Labels.es-ES.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Labels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>

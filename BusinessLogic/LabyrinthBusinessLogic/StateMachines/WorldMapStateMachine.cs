@@ -1,5 +1,6 @@
 ﻿namespace LabyrinthBusinessLogic.StateMachines
 {
+    using Kabatra.Game.StateMachine.StateMachines;
     using Handlers.Displays;
     using States;
     using Triggers;
@@ -11,14 +12,18 @@
     /// <seealso href="https://github.com/dotnet-state-machine/stateless"/>
     public class WorldMapStateMachine : StateMachineAbstract<WorldMap, PlayerMovement>
     {
+        private new IDisplayHandler DisplayHandler;
+        private new Utilities.LabelRetriever LabelRetriever;
+
         /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>
         public WorldMapStateMachine(WorldMap initialState, IDisplayHandler displayHandler) : base(initialState, displayHandler)
         {
+            Initialize(displayHandler);
             SetupStateMachine();
         }
 
         /// <inheritdoc cref="StateMachineAbstract{TState,TTrigger}"/>
-        private protected sealed override void SetupStateMachine()
+        protected override void SetupStateMachine()
         {
             ConfigureForStateNone();
             ConfigureFirstPiece();
@@ -212,6 +217,16 @@
                 .Ignore(PlayerMovement.Backward)
                 .Ignore(PlayerMovement.Left)
                 .Ignore(PlayerMovement.Right);
+        }
+
+        /// <summary>
+        ///     Handles initialization for any instance variables of this class.
+        /// </summary>
+        /// <param name="displayHandler">The display handler to use.</param>
+        private void Initialize(IDisplayHandler displayHandler)
+        {
+            DisplayHandler = displayHandler;
+            LabelRetriever = Utilities.LabelRetriever.GetLabelRetriever() as Utilities.LabelRetriever;
         }
     }
 }

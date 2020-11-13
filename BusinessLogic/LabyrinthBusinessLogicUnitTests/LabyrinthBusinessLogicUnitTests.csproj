@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -16,12 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LabyrinthBusinessLogic\LabyrinthBusinessLogic.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Stateless">
-      <HintPath>..\..\..\..\..\..\.nuget\packages\stateless\4.2.1\lib\net40\Stateless.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
