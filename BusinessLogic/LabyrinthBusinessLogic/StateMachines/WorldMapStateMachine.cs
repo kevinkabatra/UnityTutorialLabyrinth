@@ -226,7 +226,7 @@
         private void Initialize(IDisplayHandler displayHandler)
         {
             DisplayHandler = displayHandler;
-            LabelRetriever = Utilities.LabelRetriever.GetLabelRetriever() as Utilities.LabelRetriever;
+            LabelRetriever = Utilities.LabelRetriever.GetLabelRetriever();
         }
     }
 }

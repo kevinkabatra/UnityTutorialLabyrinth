@@ -1,8 +1,6 @@
 ﻿namespace LabyrinthBusinessLogicUnitTests.Utilities
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
-    using Kabatra.Common.LabelRetriever.Cultures;
     using LabyrinthBusinessLogic.Utilities;
     using Xunit;
 
@@ -25,33 +23,6 @@
             var retriever = LabelRetriever.GetLabelRetriever();
 
             Assert.NotNull(retriever);
-        }
-
-        [Fact]
-        public void CanRetrieveDefaultApplicationStartLabel()
-        {
-            var english = Languages.EnglishUnitedStates;
-            var retriever = LabelRetriever.GetLabelRetriever(english);
-
-            const string expectedLabelContent = "Application started.";
-            var actualLabelContent = retriever.ApplicationStart;
-
-            Assert.NotEmpty(actualLabelContent);
-            Assert.Equal(expectedLabelContent, actualLabelContent);
-        }
-
-        [Fact]
-        [SuppressMessage("ReSharper", "StringLiteralTypo", Justification = "Content written in Spanish.")]
-        public void CanRetrieveTranslatedApplicationStartLabel()
-        {
-            var spanish = Languages.SpanishSpain;
-            var retriever = LabelRetriever.GetLabelRetriever(spanish);
-
-            const string expectedLabelContent = "Programa iniciado.";
-            var actualLabelContent = retriever.ApplicationStart;
-
-            Assert.NotEmpty(actualLabelContent);
-            Assert.Equal(expectedLabelContent, actualLabelContent);
         }
     }
 }
