@@ -270,11 +270,17 @@
  <Reference Include="Stateless">
  <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/Stateless.dll</HintPath>
  </Reference>
- <Reference Include="LabyrinthBusinessLogic">
- <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/netstandard2.0/LabyrinthBusinessLogic.dll</HintPath>
+ <Reference Include="Kabatra.Game.StateMachine">
+ <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/Kabatra.Game.StateMachine.dll</HintPath>
  </Reference>
- <Reference Include="LabyrinthBusinessLogic.resources">
- <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/netstandard2.0/es-ES/LabyrinthBusinessLogic.resources.dll</HintPath>
+ <Reference Include="Kabatra.Common.LabelRetriever">
+ <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/Kabatra.Common.LabelRetriever.dll</HintPath>
+ </Reference>
+ <Reference Include="LabyrinthBusinessLogic">
+ <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/LabyrinthBusinessLogic.dll</HintPath>
+ </Reference>
+ <Reference Include="Kabatra.Common.LabelRetriever.resources">
+ <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/Labyrinth/Assets/References/es-ES/Kabatra.Common.LabelRetriever.resources.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

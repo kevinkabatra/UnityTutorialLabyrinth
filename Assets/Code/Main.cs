@@ -4,8 +4,10 @@ namespace Assets.Code
     using System;
     using Handlers.Display;
     using Handlers.Input;
+    using Kabatra.Game.StateMachine.StateMachines;
+    using Kabatra.Game.StateMachine.StateMachines.States;
+    using Kabatra.Game.StateMachine.StateMachines.Triggers;
     using LabyrinthBusinessLogic.StateMachines;
-    using LabyrinthBusinessLogic.StateMachines.States;
     using LabyrinthBusinessLogic.StateMachines.Triggers;
     using UnityEngine;
 
@@ -23,7 +25,7 @@ namespace Assets.Code
         private DisplayHandler _displayHandler;
         private InputHandler _inputHandler;
 
-        private GameStateStateMachine _gameStateStateMachine;
+        private StateMachineGameState _gameStateStateMachine;
         private WorldMapStateMachine _worldMapStateMachine;
 
         /// <summary>
@@ -123,7 +125,7 @@ namespace Assets.Code
 
             _inputHandler = new InputHandler();
 
-            _gameStateStateMachine = new GameStateStateMachine(GameState.None, _displayHandler);
+            _gameStateStateMachine = new StateMachineGameState(GameState.None, _displayHandler);
             _worldMapStateMachine = new WorldMapStateMachine(LabyrinthBusinessLogic.StateMachines.States.WorldMap.None, _displayHandler);
 
             _displayHandler.HideAll();

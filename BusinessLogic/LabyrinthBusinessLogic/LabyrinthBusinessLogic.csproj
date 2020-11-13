@@ -4,10 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Users\kevin\Documents\MySource\Unity Tutorials\Labyrinth\Assets\References\</OutputPath>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Kabatra.Game.StateMachine" Version="1.3.0" />
   </ItemGroup>
@@ -26,5 +22,9 @@
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet publish .\LabyrinthBusinessLogic.csproj --output ..\..\Assets\References --no-build" />
+  </Target>
 
 </Project>
